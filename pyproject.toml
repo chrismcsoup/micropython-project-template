@@ -1,5 +1,5 @@
 [project]
-name = "micropython-macos-test1"
+name = "micropython-project-template"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
