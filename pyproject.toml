@@ -81,3 +81,14 @@ select = [
     "W",     # pycodestyle
     "YTT",   # flake8-2020
 ]
+
+[tool.pyright]
+extraPaths = ["lib-dev"]
+include = ["src"]
+ignore = ["**/typings"]
+exclude = [".*", "__*", "**/typings"]
+typeCheckingMode = "basic"
+stubPath = "typings"
+typeshedPath = ".venv/lib/python3.13/site-packages"
+pythonPlatform = "Linux"
+reportMissingModuleSource = "none"
