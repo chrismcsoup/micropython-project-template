@@ -207,6 +207,7 @@ mpremote does the heavy lifting for us. I just wrote a couple of helper tasks wi
 NOTE: Most of the deploy related tasks like (deploy_lib, run_local, run_mcu) need a 
 microcontroller with micropython flashed connected to the computer.
 
+
 ```bash
 $ mise tasks
 Name        Description                      
@@ -216,6 +217,19 @@ lint        Lint the code
 run_local   Run locally (computer)           
 run_mcu     Run on connected microcontroller 
 test        Run the tests         
+
+$ mise task run <taskname>
+# e.g.
+$ mise task run test
+
+# or if there are no name conflicts the shortcut
+$ mise <taskname>
+# e.g.
+$ mise test
+
+# some tasks accept arguments (e.g. the run_loca and the run_mcu task)
+mise run_local src/hello.py
+
 ```
 
 
