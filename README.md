@@ -61,6 +61,8 @@ uv venv
 uv sync
 ```
 
+### Code autocomplete and type checking in vscode
+
 To have nice autocompletion and type checking in vscode we can use the `micropython-unix-stubs` package.
 
 ```bash
@@ -71,17 +73,21 @@ MicroPython v1.24.1 on 2024-11-29; darwin [GCC 4.2.1] version
 
 # Install the micropython-unix-stubs package
 # the version should match with your micropython version
-$ uv add micropython-unix-stubs==1.24.1.post2
+$ uv add --dev micropython-unix-stubs==1.24.1.post2
 ```
 
+### Code linting and formatting
 
-To be able to work with micropython microcontrollers like copying files to the device or executing files on it
-we use the `mpremote` utility (a "normal" python package).
+For code formatting and linting we use `ruff`. 
 
 ```bash
-# Install the mpremote package
-uv add mpremote
+# Install the ruff package
+uv add --dev ruff
+
+# We can check the code with
+ruff check
 ```
+
 
 
 ## Unittesting with micropython
@@ -189,3 +195,13 @@ micropython test/test_mycode.py test_mycode.TestMyCode.test_add
 ## Deploying micropython code to the microcontroller
 
 TBD
+
+### Micropython microcontroller deployment
+
+To be able to work with micropython microcontrollers like copying files to the device or executing files on it
+we use the `mpremote` utility (a "normal" python package).
+
+```bash
+# Install the mpremote package
+uv add --dev mpremote
+```
