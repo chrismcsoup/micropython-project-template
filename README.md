@@ -204,6 +204,9 @@ uv add --dev mpremote
 
 mpremote does the heavy lifting for us. I just wrote a couple of helper tasks with mise to make common tasks easier. If you want to know what is behind those tasks, have a look at the mise.toml and loog for [tasks.<taskname>]. As said mise (https://mise.jdx.dev/) is a great tool for managing typical requirements of software development projects.
 
+NOTE: Most of the deploy related tasks like (deploy_lib, run_local, run_mcu) need a 
+microcontroller with micropython flashed connected to the computer.
+
 ```bash
 $ mise tasks
 Name        Description                      
@@ -216,6 +219,6 @@ test        Run the tests
 ```
 
 
-# TODO
+## TODO
 
 * cleanup of files on the microcontroller (maybe something like this [text](https://github.com/orgs/micropython/discussions/9802#discussioncomment-10265852) but with a safeguard that we can't delete the local files only the ones on the microcontroller)
