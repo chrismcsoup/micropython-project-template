@@ -1,16 +1,54 @@
-# Create a micropython project
+# Micropython Project Template
+
+This is my personal micropython project template. But you are welcome to use and adapt it for your own projects. At the moment this is a work in progress, and although I am doing software development for a long time, I am still quite new to micropython. So I am trying to figure out a project template that fullfills the objectives.
+
+## Objectives
+
+* great developer experience / ease of use
+* reproducable environment/builds
+* automated testing
+* easy deployment to the microcontroller
+* easy debugging
+
+## Tech stack and tools I use 
+
+I develop micropython code on my macbook. While the docs reflect the mac specific settings/installation procedures the tools I use are platform independent and should run on Linux and Windows as well. 
+
+### General Tools
+I use the following tools for most software development projects (not specifically micropython):
+
+- [uv]([https://](https://docs.astral.sh/uv/) for managing "normal" python environments and dependencies (even though we want to code micropython we still need a normal python for some tools)
+- [homebrew](https://brew.sh/) for installing micropython and other global software packages on my macbook
+- [vscode](https://code.visualstudio.com/) as my code editor
+- [mise-en-place](https://mise.jdx.dev/) not yet used here but I plan to use it for some helper tasks (this tool is highly recommended for ALL software development projects)
+
+
+### Micropython specific tools
+
+- [mpremote](https://docs.micropython.org/en/latest/reference/mpremote.html) for copying files to the micropython device and executing files on it
+- [micropython-stubs](https://github.com/Josverl/micropython-stubs) for autocompletion and type checking in vscode
+- [Micropython unittest](https://github.com/micropython/micropython-lib/blob/master/python-stdlib/unittest/unittest/__init__.py) for testing micropython code in a desktop micropython environment (not as fully fledged as the normal python unittest module but it gets the job done and I am very glad that it exists)
+- that's all for the moment, more to come...
+
+
+## Create a micropython project
+
+We need a project directory (the next steps will basically create a very similar project you see here in this repo). 
 
 ```bash
 mkdir myproject
 cd myproject
 ```
-# Developing micropython
+## Developing micropython
 
 For several tools around micropython development, we also need a normal python installation. I use uv for this. 
 
 ```bash
 # Install uv globally
 brew install uv
+
+# NOTE make sure you are in the project directory if you aren't already
+cd myproject
 
 # Creates a new project
 uv init 
@@ -46,7 +84,7 @@ uv add mpremote
 ```
 
 
-# Unittesting with micropython
+## Unittesting with micropython
 
 This approach should help to build code/libraries for micropython that do not depend on 
 specific hardware and can be tested in a desktop environment.
@@ -59,7 +97,7 @@ The idea is to use the micropython `unittest` module to test the library in a mi
 
 
 
-## Install micropython
+### Install micropython on the computer
 
 On macOS we can use homebrew to easily install micropython. 
 
@@ -78,7 +116,7 @@ brew install micropython
 ```
 
 
-## Install the unittest module
+### Install the unittest module
 
 Because the unittest module should test the micropython code with the micropython interpreter, we need to install the `unittest` module in the micropython environment and **NOT** in the "normal" python environment with ~~uv add~~.
 
@@ -91,7 +129,7 @@ mkdir lib-dev
 micropython -m mip install unittest --target lib-dev
 ```
 
-## Create some code
+### Create some code
 
 Let's create a simple function that we want to test.
 
@@ -106,7 +144,7 @@ def add(a, b):
 ```
 
 
-## Create the test file
+### Create the test file
 
 ```bash
 mkdir test
@@ -132,14 +170,14 @@ if __name__ == '__main__':
     unittest.main()
 ```
 
-## Run the tests
+### Run the tests
 
 ```bash
 micropython test/test_mycode.py
 ```
 
 
-## If we want to only test a specific test case
+### If we want to only test a specific test case
 
 **NOTE**: This is not working yet when you follow the steps above. But in this repo I have implemented it.
 
@@ -148,3 +186,6 @@ micropython test/test_mycode.py test_mycode.TestMyCode.test_add
 ```
 
 
+## Deploying micropython code to the microcontroller
+
+TBD
