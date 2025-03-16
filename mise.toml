@@ -1,4 +1,10 @@
 [settings]
 python.uv_venv_auto = true
+
 [tools]
 python = "3.13.2"
+
+[tasks]
+test = "micropython test/run_tests.py"
+lint = "ruff check"
+format = "ruff format"

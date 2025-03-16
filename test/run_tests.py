@@ -1,24 +1,16 @@
 # test/test_mycode.py
 import sys
+
 # add the dev libs with the unittest module to the python path
-sys.path.append('lib-dev')
+sys.path.append("lib-dev")
 # also add our src code to the python path
-sys.path.append('src')
+sys.path.append("src")
 
-from unittest_helper import create_filtered_test_case
 import unittest
-import mycode
+from unittest_helper import create_filtered_test_case
+from test_mylib import *
 
-
-class TestMyCode(unittest.TestCase):
-    def test_add(self):
-        self.assertEqual(mycode.add(1, 2), 3)
-
-    def test_another_add(self):
-        self.assertEqual(mycode.add(2, 2), 4)
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     if len(sys.argv) > 1:
         # Run a specific test case class or test method in a specific test case class
         test_path = sys.argv[1]
