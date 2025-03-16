@@ -1,0 +1,59 @@
+version = 1
+revision = 1
+requires-python = ">=3.13"
+
+[[package]]
+name = "micropython-macos-test1"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "micropython-unix-stubs" },
+    { name = "mpremote" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "micropython-unix-stubs", specifier = "==1.24.1.post2" },
+    { name = "mpremote", specifier = ">=1.24.1" },
+]
+
+[[package]]
+name = "micropython-stdlib-stubs"
+version = "1.24.1.post2"
+source = { registry = "https://pypi.org/simple" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/d0/5e/b26e6f7e3f3d412635bb3bab4d950bcb07d7d8ec01a358d05e1216977bc3/micropython_stdlib_stubs-1.24.1.post2-py3-none-any.whl", hash = "sha256:1ef3b2cf4f84cd8a96bf05184c09498a246b87435bcea0235f3b49861a1d1cd1", size = 145403 },
+]
+
+[[package]]
+name = "micropython-unix-stubs"
+version = "1.24.1.post2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "micropython-stdlib-stubs" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/11/8a/0d1fa0ee529c13f0ee362a5183d1ad5b889217094c880f27e0852424eaab/micropython_unix_stubs-1.24.1.post2.tar.gz", hash = "sha256:9bf0dcc0bdc4b23e8deb364b3d92af776f1da31f034d0c9508c8d3ec87f78419", size = 46627 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c0/77/107dbbb6f8a225d99cf1bdb567201d37a10ac0eb5a0ed065e9f9b2e9d15a/micropython_unix_stubs-1.24.1.post2-py2.py3-none-any.whl", hash = "sha256:57a1adcb78cf02cd6eb5225abfa1a59778606ed181e8c197268b3ae770c5eaec", size = 66638 },
+]
+
+[[package]]
+name = "mpremote"
+version = "1.24.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pyserial" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/17/8f/1524e4ad13bb3169f10b2e859753114a2bae3ae6944e1d1e48e96838c1ce/mpremote-1.24.1.tar.gz", hash = "sha256:1a3c16d255748cfe54d4a897908651fc8286233173f7c7b2a0e56ae4b9fa940e", size = 25205 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ee/08/39e3cf836602825eefa53127e7b8d3a64cded8d3f639f9c67d823583e029/mpremote-1.24.1-py3-none-any.whl", hash = "sha256:d3ae3d0a0ae7713c537be2b6afadd11c7cde5f1750ea1260f6667bb80071b15b", size = 29291 },
+]
+
+[[package]]
+name = "pyserial"
+version = "3.5"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/1e/7d/ae3f0a63f41e4d2f6cb66a5b57197850f919f59e558159a4dd3a818f5082/pyserial-3.5.tar.gz", hash = "sha256:3c77e014170dfffbd816e6ffc205e9842efb10be9f58ec16d3e8675b4925cddb", size = 159125 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/07/bc/587a445451b253b285629263eb51c2d8e9bcea4fc97826266d186f96f558/pyserial-3.5-py2.py3-none-any.whl", hash = "sha256:c4451db6ba391ca6ca299fb3ec7bae67a5c55dde170964c7a14ceefec02f2cf0", size = 90585 },
+]
