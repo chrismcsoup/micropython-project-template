@@ -194,10 +194,6 @@ micropython test/test_mycode.py test_mycode.TestMyCode.test_add
 
 ## Deploying micropython code to the microcontroller
 
-TBD
-
-### Micropython microcontroller deployment
-
 To be able to work with micropython microcontrollers like copying files to the device or executing files on it
 we use the `mpremote` utility (a "normal" python package).
 
@@ -205,3 +201,21 @@ we use the `mpremote` utility (a "normal" python package).
 # Install the mpremote package
 uv add --dev mpremote
 ```
+
+mpremote does the heavy lifting for us. I just wrote a couple of helper tasks with mise to make common tasks easier. If you want to know what is behind those tasks, have a look at the mise.toml and loog for [tasks.<taskname>]. As said mise (https://mise.jdx.dev/) is a great tool for managing typical requirements of software development projects.
+
+```bash
+$ mise tasks
+Name        Description                      
+deploy_lib  deploy the library to the device 
+format      Format the code                  
+lint        Lint the code                    
+run_local   Run locally (computer)           
+run_mcu     Run on connected microcontroller 
+test        Run the tests         
+```
+
+
+# TODO
+
+* cleanup of files on the microcontroller (maybe something like this [text](https://github.com/orgs/micropython/discussions/9802#discussioncomment-10265852) but with a safeguard that we can't delete the local files only the ones on the microcontroller)

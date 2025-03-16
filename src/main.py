@@ -1,3 +1,6 @@
+from sys import path
+
+path.append("lib")
 from time import sleep_ms
 from mylib import add
 
