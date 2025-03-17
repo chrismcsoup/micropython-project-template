@@ -17,7 +17,7 @@ I develop micropython code on my macbook. While the docs reflect the mac specifi
 ### General Tools
 I use the following tools for most software development projects (not specifically micropython):
 
-- [uv]([https://docs.astral.sh/uv/) for managing "normal" python environments and dependencies (even though we want to code micropython we still need a normal python for some tools)
+- [uv](https://docs.astral.sh/uv/) for managing "normal" python environments and dependencies (even though we want to code micropython we still need a normal python for some tools)
 - [homebrew](https://brew.sh/) for installing micropython and other global software packages on my macbook
 - [vscode](https://code.visualstudio.com/) as my code editor
 - [mise-en-place](https://mise.jdx.dev/) I use it here for task management only (this tool is highly recommended for ALL software development projects)
