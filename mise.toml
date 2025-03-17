@@ -39,6 +39,23 @@ done
 mpremote cp --no-verbose -r ./src/mylib :lib
 """
 
+[tasks.deploy_all]
+depends = ["deploy_lib"]
+description = "Deploy boot.py, main.py and libs to the MCU"
+run = """
+#!/usr/bin/env bash
+if [ -f "./src/main.py" ]; then
+    echo "Copying main.py..."
+    mpremote cp --no-verbose ./src/main.py :/
+fi
+
+if [ -f "./src/boot.py" ]; then
+    echo "Copying boot.py..."
+    mpremote cp --no-verbose ./src/boot.py :/
+fi
+"""
+
+
 [tasks.run_mcu]
 description = 'Run on connected microcontroller'
 run = """

@@ -210,13 +210,15 @@ microcontroller with micropython flashed connected to the computer.
 
 ```bash
 $ mise tasks
-Name        Description                      
-deploy_lib  deploy the library to the device 
-format      Format the code                  
-lint        Lint the code                    
-run_local   Run locally (computer)           
-run_mcu     Run on connected microcontroller 
-test        Run the tests         
+Name        Description                                                    
+clear_mcu   Deletes all files and folder on the connected MCU recursively. 
+deploy_all  Deploy boot.py, main.py and libs to the MCU                    
+deploy_lib  deploy the library to the device                               
+format      Format the code                                                
+lint        Lint the code                                                  
+run_local   Run locally (computer)                                         
+run_mcu     Run on connected microcontroller                               
+test        Run the tests   
 
 $ mise task run <taskname>
 # e.g.
