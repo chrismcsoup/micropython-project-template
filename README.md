@@ -235,6 +235,4 @@ mise run_local src/hello.py
 
 ## TODO
 
-* cleanup of files on the microcontroller (maybe something like this [text](https://github.com/orgs/micropython/discussions/9802#discussioncomment-10265852) but with a safeguard that we can't delete the local files only the ones on the microcontroller)
-
 * create micropython package.json for the `mylib`
